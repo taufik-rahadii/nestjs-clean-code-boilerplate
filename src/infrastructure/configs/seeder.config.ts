@@ -13,13 +13,15 @@ import { TypeOrmModule } from '@nestjs/typeorm'
         password: env.get<string>('DB_PASSWORD'),
         database: env.get<string>('DB_NAME'),
         autoLoadEntities: true,
-        synchronize: false,
+        synchronize: true,
         extra: {
           connectionLimit: 10,
         },
+        logging: ['query', 'log', 'error'],
+        entities: [],
       }),
       inject: [ConfigService],
     }),
   ],
 })
-export class DatabaseConfig {}
+export class SeederConfig {}

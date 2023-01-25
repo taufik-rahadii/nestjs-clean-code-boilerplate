@@ -1,5 +1,5 @@
 import { ConfigService } from '@nestjs/config'
-import { DatabaseType, DataSource } from 'typeorm'
+import { DataSource } from 'typeorm'
 import { config } from 'dotenv'
 import { Admin } from '../infrastructure/application/use_cases/admin/admin.entity'
 import { join } from 'path'

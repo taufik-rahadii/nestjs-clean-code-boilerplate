@@ -1,5 +1,5 @@
 import { Query, Resolver } from '@nestjs/graphql'
-import { AdminService } from 'src/infrastructure/application/use_cases/admin/admin.service'
+import { AdminService } from '../../../use_cases/admin/admin.service'
 import { Admin } from '../../../use_cases/admin/admin.entity'
 
 @Resolver(() => Admin)

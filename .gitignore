@@ -7,7 +7,7 @@
 
 # Lock files
 yarn.lock
-package-log.json
+package*.json
 pnpm-lock.*
 
 # Logs

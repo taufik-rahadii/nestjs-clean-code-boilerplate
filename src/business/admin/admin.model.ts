@@ -1,8 +1,7 @@
-export interface AdminModel {
-  id?: string
+import { BaseModel } from '../core/base.model'
+
+export interface AdminModel extends BaseModel {
   username: string
   fullname: string
   password: string
-  createdAt?: Date
-  updatedAt?: Date
 }

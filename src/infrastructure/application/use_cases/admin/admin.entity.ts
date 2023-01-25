@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql'
-import { AdminModel } from 'src/business/admin/admin.model'
+import { AdminModel } from '../../../../business/admin/admin.model'
 import { Column, Entity } from 'typeorm'
 import { BaseEntityObj } from '../base.entity'
 

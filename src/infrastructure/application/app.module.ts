@@ -2,15 +2,11 @@ import { ApolloDriver } from '@nestjs/apollo'
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { GraphQLModule } from '@nestjs/graphql'
-import {
-  ApolloServerPluginLandingPageGraphQLPlayground,
-  ApolloServerPluginUsageReporting,
-} from 'apollo-server-core'
+import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core'
 import { join } from 'path'
 import { DatabaseConfig } from '../configs/database.config'
 import { ExternalModule } from './ioc/v0/external.module'
 import { InternalModule } from './ioc/v0/internal.module'
-import { AdminModule } from './ioc/v0/internal/admin.module'
 
 @Module({
   imports: [
