@@ -1,6 +1,5 @@
-import { createParamDecorator } from '@nestjs/common'
-import { Args, GraphQLExecutionContext, Query, Resolver } from '@nestjs/graphql'
-import { PaginationArgument } from 'src/infrastructure/application/common/arguments/pagination.argument'
+import { Args, Query, Resolver } from '@nestjs/graphql'
+import { PaginationArgument } from '../../../common/arguments/pagination.argument'
 
 @Resolver()
 export class TenantResolver {
