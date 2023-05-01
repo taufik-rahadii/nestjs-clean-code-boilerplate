@@ -16,7 +16,7 @@ import { InternalModule } from './ioc/v0/internal.module'
       isGlobal: true,
     }),
 
-    // using graphql (remove this block of line to remove graphql and use rest instead)
+    // using graphql (remove this line code to stop using graphql and use rest instead)
     GraphQLModule.forRoot({
       driver: ApolloDriver,
       debug: false,
