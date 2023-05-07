@@ -1,16 +1,19 @@
-import { Injectable } from '@nestjs/common'
-import { InjectRepository } from '@nestjs/typeorm'
-import { Repository } from 'typeorm'
+import { Inject, Injectable } from '@nestjs/common'
 import { IAdminService } from '../../../../business/admin/admin.service'
-import { Admin } from './admin.entity'
+import { IAdminRepository } from '../../../../business/admin/admin.repository'
 
 @Injectable()
 export class AdminService implements IAdminService {
   constructor(
-    @InjectRepository(Admin) private readonly adminRepo: Repository<Admin>,
+    @Inject('ADMIN_REPOSITORY')
+    private readonly adminRepository: IAdminRepository,
   ) {}
 
   async all() {
-    return await this.adminRepo.find()
+    return []
+  }
+
+  async getAdminReward(adminId: number) {
+    return await this.adminRepository.getAdminReward(adminId)
   }
 }
