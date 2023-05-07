@@ -1,10 +1,13 @@
 import { Query, Resolver } from '@nestjs/graphql'
-import { AdminService } from '../../../use_cases/admin/admin.service'
 import { Admin } from '../../../use_cases/admin/admin.entity'
+import { Inject } from '@nestjs/common'
+import { IAdminService } from '../../../../../business/admin/admin.service'
 
 @Resolver(() => Admin)
 export class AdminResolver {
-  constructor(private readonly adminService: AdminService) {}
+  constructor(
+    @Inject('ADMIN_SERVICE') private readonly adminService: IAdminService,
+  ) {}
 
   @Query(() => [Admin])
   async admins() {
