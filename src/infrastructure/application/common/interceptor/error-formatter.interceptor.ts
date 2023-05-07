@@ -29,7 +29,7 @@ export class ErrorFormatter implements NestInterceptor {
         return new InternalServerErrorException({
           error: err.getResponse(),
           data: err.message,
-          stack: err.stack,
+          stack: process.env.NODE_ENV === 'dev' ? err.stack : '',
         })
       }
 
