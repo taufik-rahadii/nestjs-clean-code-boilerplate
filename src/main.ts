@@ -9,6 +9,8 @@ import { NestFactory } from '@nestjs/core'
 import { ValidationError } from 'class-validator'
 import { AppModule } from './infrastructure/application/app.module'
 import * as morgan from 'morgan'
+import { ResponseFormatter } from './infrastructure/application/common/interceptor/success-formatter.interceptor'
+import { ErrorFormatter } from './infrastructure/application/common/interceptor/error-formatter.interceptor'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
@@ -21,6 +23,9 @@ async function bootstrap() {
   app.enableCors({
     origin: '*',
   })
+
+  app.useGlobalInterceptors(new ResponseFormatter())
+  app.useGlobalInterceptors(new ErrorFormatter())
 
   app.use(
     morgan('combined', {
