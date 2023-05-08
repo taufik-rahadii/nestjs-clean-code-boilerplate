@@ -16,36 +16,10 @@ import { InternalModule } from './ioc/v0/internal.module'
       isGlobal: true,
     }),
 
-    // using graphql (remove this line code to stop using graphql and use rest instead)
-    GraphQLModule.forRoot({
-      driver: ApolloDriver,
-      debug: false,
-      autoSchemaFile: join(process.cwd(), 'src/resources/internal-schema.gql'),
-      playground: false,
-      plugins: [
-        ApolloServerPluginLandingPageGraphQLPlayground,
-        // ApolloServerPluginUsageReporting,
-      ],
-      path: '/admin',
-      include: [InternalModule],
-    }),
-
-    GraphQLModule.forRoot({
-      driver: ApolloDriver,
-      debug: false,
-      autoSchemaFile: join(process.cwd(), 'src/resources/external-schema.gql'),
-      playground: false,
-      plugins: [
-        ApolloServerPluginLandingPageGraphQLPlayground,
-        // ApolloServerPluginUsageReporting,
-      ],
-      path: '/ql',
-      include: [ExternalModule],
-    }),
-
-    // Database Config Module /src/infrastructure/configs
+    // Config Module /src/infrastructure/configs
     DatabaseConfig,
 
+    // Application module
     InternalModule,
     ExternalModule,
   ],
