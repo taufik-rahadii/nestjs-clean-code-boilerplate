@@ -65,3 +65,11 @@ $ npm run test:cov
 4. JWT Guard
 
 don't hesitate to add your own helpers or common things
+
+## REPL (Read-Eval-Print-Loop)
+
+Based on docs https://docs.nestjs.com/recipes/repl, you can inspect any class or value injected on your AppModule. Run command below if you want to try it.
+
+```bash
+npm run console
+```
