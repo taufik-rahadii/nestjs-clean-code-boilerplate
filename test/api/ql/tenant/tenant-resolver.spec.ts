@@ -1,7 +1,7 @@
 import { INestApplication } from '@nestjs/common'
 import { GraphQLModule } from '@nestjs/graphql'
 import { Test } from '@nestjs/testing'
-import { TenantModule } from '../../../../../src/infrastructure/application/ioc/v0/external/tenant.module'
+import { TenantModule } from '../../../../src/infrastructure/application/ioc/v0/external/tenant.module'
 import * as supertest from 'supertest'
 import { MainModule } from '../../../modules/main.module'
 import { ApolloDriver } from '@nestjs/apollo'
